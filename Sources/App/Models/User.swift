@@ -40,6 +40,11 @@ final class User: Model {
         password = try node.extract(Keys.password)
     }
     
+    
+}
+
+// MARK: - NodeRepresentable
+extension User {
     func makeNode(context: Context) throws -> Node {
         return try Node(node: [
             "id": id,
@@ -47,8 +52,8 @@ final class User: Model {
             "password": password,
             ])
     }
-
 }
+
 
 
 // MARK: - Preparation
